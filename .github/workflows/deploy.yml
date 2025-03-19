@@ -13,11 +13,11 @@ jobs:
       - name: 🛎️ Repozitory'yi Klonla
         uses: actions/checkout@v3
 
-      - name: 📦 Docker Kur
-        run: |
-          sudo apt-get update
-          sudo apt-get remove -y containerd
-          sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+      # - name: 📦 Docker Kur
+      #   run: |
+      #     sudo apt-get update
+      #     sudo apt-get remove -y containerd
+      #     sudo apt-get install -y docker-ce docker-ce-cli containerd.io
       
 
       - name: 🔑 Docker Hub'a Giriş Yap
