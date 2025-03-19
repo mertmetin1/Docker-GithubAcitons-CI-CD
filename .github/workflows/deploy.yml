@@ -28,12 +28,16 @@ jobs:
           docker build -t ${{ secrets.DOCKER_USERNAME }}/flask-app:latest .
           docker push ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
 
+
+
+
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🔑 Sunucuya Bağlan ve Güncellemeyi Çek
+      - name: 🔑 Sunucuya SSH ile Bağlan ve Güncellemeyi Çek
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SERVER_IP }}
@@ -43,4 +47,4 @@ jobs:
             docker pull ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
             docker stop flask-app || true
             docker rm flask-app || true
-            docker run -d --name flask-app -p 5000:5000 ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
+            docker run -d --restart always --name flask-app -p 5000:5000 ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
