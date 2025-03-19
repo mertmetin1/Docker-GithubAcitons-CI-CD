@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "Merhaba, Flask Uygulamasına Hoş Geldiniz!"
+    return "Merhaba, Flask Uygulamasına Hoş Geldiniz MERTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT!"
 
 
 
