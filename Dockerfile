@@ -12,7 +12,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY app.py .
 
 # PDF dosyasını da konteynere kopyala
-COPY yivli_insaat_logo_page-0001.jpg /app/yivli_insaat_logo_page-0001.jpg
+COPY yivliinsaat.pdf /app/yivliinsaat.pdf
 
 
 # Uygulamayı çalıştırmak için komut
