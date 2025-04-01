@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask
 
 app = Flask(__name__)
 
@@ -6,7 +6,9 @@ app = Flask(__name__)
 def index():
     return '''
     <h1>Merhaba, Flask Uygulamasına Hoş Geldiniz!</h1>
-    <img src="/static/yivli_insaat_logo_page-0001.jpg" alt="Image">
+    <iframe src="/static/document.pdf" width="100%" height="600px">
+        Bu sayfada PDF dosyasını görüntüleyemiyorsanız, <a href="/static/document.pdf">buraya tıklayın</a>.
+    </iframe>
     '''
 
 if __name__ == '__main__':
