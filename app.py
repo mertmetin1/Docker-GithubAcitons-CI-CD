@@ -1,4 +1,3 @@
-import os
 from flask import Flask, send_file
 
 app = Flask(__name__)
@@ -6,15 +5,81 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return '''
-    <h1>Merhaba, Flask Uygulamasına Hoş Geldiniz!</h1>
-    <iframe src="/pdf" width="100%" height="100%">
-        PDF dosyasını görüntüleyemiyorsanız, <a href="/pdf">buraya tıklayın</a>.
-    </iframe>
+    <!DOCTYPE html>
+    <html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Yivli İnşaat</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                text-align: center;
+            }
+
+            .container {
+                background-color: #fff;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                border-radius: 10px;
+                max-width: 900px;
+                width: 100%;
+            }
+
+            h1 {
+                color: #2c3e50;
+                font-size: 36px;
+                margin-bottom: 20px;
+                font-weight: bold;
+            }
+
+            iframe {
+                border: none;
+                width: 100%;
+                height: 600px;
+                border-radius: 10px;
+            }
+
+            .footer {
+                margin-top: 20px;
+                color: #7f8c8d;
+            }
+
+            a {
+                color: #3498db;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Yivli İnşaat </h1>
+            <p>Yakında...</p>
+            <iframe src="/pdf" width="100%" height="100%">
+                PDF dosyasını görüntüleyemiyorsanız, <a href="/pdf">buraya tıklayın</a>.
+            </iframe>
+            <div class="footer">
+                <p>&copy; 2025 Yivli İnşaat</p>
+            </div>
+        </div>
+    </body>
+    </html>
     '''
 
 @app.route('/pdf')
 def show_pdf():
-    # PDF dosyasının tam yolunu belirtiyoruz
     return send_file('/app/yivliinsaat.pdf', as_attachment=False)
 
 if __name__ == '__main__':
