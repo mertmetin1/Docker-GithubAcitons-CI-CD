@@ -7,7 +7,7 @@ app = Flask(__name__)
 def index():
     return '''
     <h1>Merhaba, Flask Uygulamasına Hoş Geldiniz!</h1>
-    <iframe src="/pdf" width="100%" height="600px">
+    <iframe src="/pdf" width="100%" height="100%">
         PDF dosyasını görüntüleyemiyorsanız, <a href="/pdf">buraya tıklayın</a>.
     </iframe>
     '''
