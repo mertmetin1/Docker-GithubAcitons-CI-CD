@@ -1,11 +1,16 @@
-from flask import Flask, send_from_directory
-import os
+from flask import Flask
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return send_from_directory(os.path.join(app.root_path, 'static'), 'yivli_insaat_logo_page-0001.jpg')
+    return "Merhaba, Flask Uygulamasına Hoş Geldiniz MERTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT!"
+
+
+
+
+
+
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=80)
+    app.run(debug=True, host='0.0.0.0',port=80)
