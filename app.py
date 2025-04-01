@@ -40,10 +40,10 @@ def index():
                 font-weight: bold;
             }
 
-            iframe {
-                border: none;
+            img {
                 width: 100%;
-                height: 600px;
+                max-width: 100%;
+                height: auto;
                 border-radius: 10px;
             }
 
@@ -65,11 +65,9 @@ def index():
     </head>
     <body>
         <div class="container">
-            <h1>Yivli İnşaat </h1>
+            <h1>Yivli İnşaat</h1>
             <p>Yakında...</p>
-            <iframe src="/pdf" width="100%" height="100%">
-                PDF dosyasını görüntüleyemiyorsanız, <a href="/pdf">buraya tıklayın</a>.
-            </iframe>
+            <img src="/yivliinsaat.jpg" alt="Yivli İnşaat Görseli">
             <div class="footer">
                 <p>&copy; 2025 Yivli İnşaat</p>
             </div>
@@ -78,9 +76,9 @@ def index():
     </html>
     '''
 
-@app.route('/pdf')
-def show_pdf():
-    return send_file('/app/yivliinsaat.pdf', as_attachment=False)
+@app.route('/yivliinsaat.jpg')
+def show_image():
+    return send_file('yivliinsaat.jpg', mimetype='image/jpeg')
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=80)
